@@ -1,0 +1,14 @@
+body {
+    background-color: var(--primary-bg-color);
+    font-family: var(--primary-font-family);
+    text-align: center;
+    padding: 5%;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+    margin: auto;
+}
