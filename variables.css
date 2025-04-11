@@ -1,4 +1,8 @@
 :root {
     --primary-bg-color: #404040;
     --primary-font-family: sans-serif;
+
+    --button-text-color: #ffffff;
+    --button-bg-color: #0c5403;
+    --button-hover-bg-color: #089216;
 }

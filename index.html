@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="variables.css" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Minigames</title>
-    </head>
-    <body>
-        <div id="menu">
-            <h1>Minigames</h1>
-            <button
-                id="minesweeperButton"
-                class="gameButton"
-                onclick="startGame('minesweeper')"
-            >
-                Minesweeper
-            </button>
-            <button id="..." class="gameButton" onclick="startGame('...')">
-                ...
-            </button>
-        </div>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Minigames</title>
+</head>
+
+<body>
+
+    <div id="menu">
+        <h1>Minigames</h1>
+        <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
+        <button id="..." class="gameButton" onclick="startGame('...')">...</button>
+    </div>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="media/vid/stars.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <a id="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
+        Vecteezy</a>
+    <script src="script.js"></script>
+</body>
+
 </html>
