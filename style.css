@@ -9,20 +9,22 @@ body {
 #menu {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
+    gap: 15px;
+    max-width: 250px;
     margin: auto;
     margin-top: 5%;
-    background-color: #a0a0a0;
+    background-color: rgba(58, 82, 106, 0.5);
     border-radius: 5px;
     padding: 10px;
 }
 
-h1 {
-    margin: 0px;
-    font-size: 42px;
-    font-weight: bold;
-    color: #464545;
+#bigTitle {
+    margin-top: 3%;
+    font-size: 46px;
+    background: linear-gradient(to bottom, #ffffff, #d6b167);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -31,9 +33,9 @@ button {
     border: none;
     border-radius: 5px;
     padding: 10px;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
