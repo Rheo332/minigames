@@ -13,22 +13,13 @@ body {
     max-width: 250px;
     margin: auto;
     margin-top: 5%;
-    background-color: rgba(58, 82, 106, 0.5);
+    background-color: var(--menu-bg-color);
     border-radius: 5px;
     padding: 10px;
 }
 
-#bigTitle {
-    margin-top: 3%;
-    font-size: 46px;
-    background: linear-gradient(to bottom, #ffffff, #d6b167);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 button {
-    background-color: var(--button-bg-color);
+    background-color: var(--primary-accent-color);
     color: var(--button-text-color);
     border: none;
     border-radius: 5px;
@@ -40,33 +31,4 @@ button {
 
 button:hover {
     background-color: var(--button-hover-bg-color);
-}
-
-#bgAttribution {
-    position: absolute;
-    bottom: 1%;
-    left: 1%;
-    font-size: 12px;
-    color: #ffffff;
-    opacity: 0.7;
-}
-
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1980px;
-    height: 1080px;
-    object-fit: cover;
-    z-index: -1;
-    margin: 0;
-    padding: 0;
-}
-
-#credits {
-    color: #ffffff;
-    font-size: 12px;
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
 }

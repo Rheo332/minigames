@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../variables.css" />
+    <link rel="stylesheet" href="../globalStyle.css" />
     <link rel="stylesheet" href="minesweeper.css" />
     <title>Minesweeper</title>
 </head>
 
 <body>
-    <div id="ribbon">
+    <div class="ribbon">
         <button id="backButton" onclick="backButtonClicked()">Back</button>
+        <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
     </div>
 
-    <div id="game-container">
-        <h2>Minesweeper</h2>
+    <div id="gameContainer">
+        <h1>Minesweeper</h1>
     </div>
     <script src="minesweeper.js"></script>
 </body>

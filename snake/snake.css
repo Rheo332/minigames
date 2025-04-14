@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--primary-bg-color);
     font-family: var(--primary-font-family);
+    background-color: var(--primary-bg-color);
 }
 
 #gameContainer {
@@ -11,4 +11,10 @@ body {
     align-items: center;
     color: #fff;
     margin-top: 40px;
+}
+
+canvas {
+    background: #111;
+    border: 2px solid #fff;
+    opacity: 0.8;
 }

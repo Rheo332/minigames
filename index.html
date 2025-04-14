@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="globalStyle.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Minigames</title>
 </head>
 
 <body>
 
-    <h1 id="bigTitle">Space Minigames</h1>
+    <h1 class="bigTitle">Space Minigames</h1>
     <div id="menu">
         <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
+        <button id="snakeButton" class="gameButton" onclick="startGame('snake')">Snake</button>
         <button id="..." class="gameButton" onclick="startGame('...')">...</button>
     </div>
 
-    <video autoplay muted loop playsinline id="bg-video">
+    <video autoplay muted loop playsinline class="bgVideo">
         <source src="media/vid/stars.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
-    <a id="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
+    <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
         Vecteezy</a>
-    <a id="credits" href="">Credits</a>
+    <a class="credits" href="">Credits</a>
     <script src="script.js"></script>
 </body>
 
