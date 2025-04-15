@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../globalStyle.css">
-    <link rel="stylesheet" href="snake.css">
-    <title>Snake</title>
+    <link rel="stylesheet" href="reactions.css">
+    <title>Reactions</title>
 </head>
 
 <body>
@@ -17,8 +17,14 @@
     </div>
 
     <div id="gameContainer">
-        <h1 class="bigTitle">Snake</h1>
-        <canvas id="gameCanvas" width="500" height="500"></canvas>
+        <h1 class="bigTitle">Reactions</h1>
+
+        <div id="canvasWrapper">
+            <canvas id="gameCanvas" width="550" height="550"></canvas>
+            <pre id="output"></pre>
+        </div>
+
+        <h1 id="score" class="bigTitle">0</h1>
     </div>
 
     <video autoplay muted loop playsinline class="bgVideo">
@@ -27,7 +33,7 @@
     <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
         Vecteezy</a>
     <a class="credits" href="">Credits</a>
-    <script src="snake.js"></script>
+    <script src="reactions.js"></script>
 </body>
 
 </html>

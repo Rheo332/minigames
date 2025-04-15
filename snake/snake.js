@@ -6,7 +6,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 const gridSize = 20;
-const tileCountX = canvas.width / gridSize;
+const tileCount = canvas.width / gridSize;
 
 let snake = [{ x: 10, y: 10 }];
 let direction = { x: 0, y: 0 };
@@ -25,8 +25,8 @@ function draw() {
 
     if (head.x === food.x && head.y === food.y) {
         food = {
-            x: Math.floor(Math.random() * tileCountX),
-            y: Math.floor(Math.random() * tileCountX),
+            x: Math.floor(Math.random() * tileCount),
+            y: Math.floor(Math.random() * tileCount),
         };
         score++;
         // TODO: check win condition
@@ -46,9 +46,9 @@ function draw() {
 
     if (
         head.x < 0 ||
-        head.x >= tileCountX ||
+        head.x >= tileCount ||
         head.y < 0 ||
-        head.y >= tileCountX ||
+        head.y >= tileCount ||
         snake.slice(1).some((seg) => seg.x === head.x && seg.y === head.y)
     ) {
         // TODO: Show game over message and reload the game (maybe a menu?)

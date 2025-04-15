@@ -14,7 +14,7 @@ body {
 }
 
 canvas {
-    background: #111;
-    border: 2px solid #fff;
+    background: #000000;
+    border: 1px solid #ffffff;
     opacity: 0.8;
 }
