@@ -6,7 +6,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const score = document.getElementById("score");
 const output = document.getElementById("output");
-output.innerHTML = "Output:\n";
+output.innerHTML = '<span style="color: #5000ff">Output:</span>\n';
 
 const gridSize = 50;
 const tileCount = canvas.width / gridSize;
