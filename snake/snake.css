@@ -1,20 +1,126 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--primary-font-family);
-    background-color: var(--primary-bg-color);
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font-family);
+  background-color: var(--primary-bg-color);
 }
 
 #gameContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-top: 40px;
+  position: relative;
 }
 
 canvas {
-    background: #000000;
-    border: 1px solid #ffffff;
-    opacity: 0.8;
+  background: #000000;
+  border: 1px solid #ffffff;
+}
+
+.canvasWrapper {
+  position: relative;
+  display: inline-block;
+}
+.canvasWrapper::after,
+.canvasWrapper::before {
+  content: "";
+  background: conic-gradient(
+    from var(--angle),
+    transparent 20%,
+    var(--primary-accent-color)
+  );
+  animation: spin 2s linear infinite;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 5px;
+  border-radius: 5px;
+}
+.canvasWrapper::before {
+  filter: blur(25px);
+  opacity: 0.5;
+}
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+#gameMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: var(--menu-bg-color);
+  padding: 10px;
+  border-radius: 10px;
+}
+#gameMenu button {
+  background: var(--primary-accent-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0.8;
+}
+#gameMenu button:hover {
+  opacity: 1;
+}
+
+#scoreInfo {
+  display: none;
+  max-width: 120px;
+  word-wrap: break-word;
+  margin: 5px;
+  border: 2px solid var(--primary-accent-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#speedSlider {
+  margin: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90%;
+  height: 10px;
+  background: var(--primary-accent-color);
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+#speedSlider:hover {
+  opacity: 1;
+}
+
+#speedSliderLabel {
+  font-size: 20px;
+  color: var(--primary-accent-color);
+  margin-bottom: 5px;
 }

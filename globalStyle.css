@@ -1,75 +1,71 @@
 :root {
-    --primary-bg-color: #404040;
-    --primary-font-family: sans-serif;
+  --primary-bg-color: #404040;
+  --primary-font-family: sans-serif;
 
-    --primary-accent-color: #f0c674;
+  --primary-accent-color: #f0c674;
 
-    --button-text-color: #3a526a;
-    --button-hover-bg-color: #d4a93c;
+  --button-text-color: #3a526a;
+  --button-hover-bg-color: #d4a93c;
 
-    --menu-bg-color: rgba(58, 82, 106, 0.7);
+  --menu-bg-color: rgba(58, 82, 106, 0.7);
 }
 
 .bigTitle {
-    margin-top: 3%;
-    font-size: 46px;
-    background: linear-gradient(
-        to bottom,
-        #ffffff,
-        var(--primary-accent-color)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  margin-top: 3%;
+  font-size: 46px;
+  background: linear-gradient(to bottom, #ffffff, var(--primary-accent-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .credits {
-    color: #ffffff;
-    font-size: 12px;
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
 }
 
 .bgVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1980px;
-    height: 1080px;
-    object-fit: cover;
-    z-index: -1;
-    margin: 0;
-    padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1980px;
+  height: 1080px;
+  object-fit: cover;
+  z-index: -99;
+  margin: 0;
+  padding: 0;
 }
 
 .bgAttribution {
-    position: absolute;
-    bottom: 1%;
-    left: 1%;
-    font-size: 12px;
-    color: #ffffff;
-    opacity: 0.7;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0.7;
 }
 
 .ribbon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--menu-bg-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--menu-bg-color);
 }
 
 .ribbon button {
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    border: 0;
-    background-color: var(--primary-accent-color);
-    color: var(--button-text-color);
-    font-size: 18px;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 0;
+  background-color: var(--primary-accent-color);
+  color: var(--button-text-color);
+  font-size: 18px;
 }
 
 .ribbon button:hover {
-    background-color: var(--button-hover-bg-color);
+  background-color: var(--button-hover-bg-color);
 }

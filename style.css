@@ -1,34 +1,34 @@
 body {
-    background-color: var(--primary-bg-color);
-    font-family: var(--primary-font-family);
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  background-color: var(--primary-bg-color);
+  font-family: var(--primary-font-family);
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 #menu {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 250px;
-    margin: auto;
-    margin-top: 5%;
-    background-color: var(--menu-bg-color);
-    border-radius: 5px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 250px;
+  margin: auto;
+  margin-top: 5%;
+  background-color: var(--menu-bg-color);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 button {
-    background-color: var(--primary-accent-color);
-    color: var(--button-text-color);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 26px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: var(--primary-accent-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0.8;
 }
-
 button:hover {
-    background-color: var(--button-hover-bg-color);
+  opacity: 1;
 }
