@@ -45,12 +45,7 @@ function draw() {
   for (let segment of snake) {
     ctx.fillStyle = `hsl(${c}, 100%, 50%)`;
     c += 3;
-    ctx.fillRect(
-      segment.x * gridSize,
-      segment.y * gridSize,
-      gridSize,
-      gridSize
-    );
+    ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
   }
 
   if (
@@ -75,9 +70,7 @@ function generateFood() {
       x: Math.floor(Math.random() * tileCount),
       y: Math.floor(Math.random() * tileCount),
     };
-  } while (
-    snake.some((segment) => segment.x === newFood.x && segment.y === newFood.y)
-  );
+  } while (snake.some((segment) => segment.x === newFood.x && segment.y === newFood.y));
   return newFood;
 }
 
@@ -87,32 +80,28 @@ function changeDirection(event) {
     case "ArrowUp":
       if (
         (directionChangeQueue.length === 0 && direction.y === 0) ||
-        (directionChangeQueue.length > 0 &&
-          directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
       )
         directionChangeQueue.push({ x: 0, y: -1 });
       break;
     case "ArrowDown":
       if (
         (directionChangeQueue.length === 0 && direction.y === 0) ||
-        (directionChangeQueue.length > 0 &&
-          directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
       )
         directionChangeQueue.push({ x: 0, y: 1 });
       break;
     case "ArrowLeft":
       if (
         (directionChangeQueue.length === 0 && direction.x === 0) ||
-        (directionChangeQueue.length > 0 &&
-          directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
       )
         directionChangeQueue.push({ x: -1, y: 0 });
       break;
     case "ArrowRight":
       if (
         (directionChangeQueue.length === 0 && direction.x === 0) ||
-        (directionChangeQueue.length > 0 &&
-          directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
       )
         directionChangeQueue.push({ x: 1, y: 0 });
       break;
