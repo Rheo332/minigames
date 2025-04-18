@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font-family);
+    background-color: var(--primary-bg-color);
+  }
+  
+  #game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  #gameMenu button {
+    background: var(--primary-accent-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;
+  }
+  #gameMenu button:hover {
+    opacity: 1;
+  }
+
