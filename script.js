@@ -1,3 +1,3 @@
 function startGame(game) {
-    window.location.href = `${game}/${game}.html`;
+  window.location.href = `${game}/${game}.html`;
 }

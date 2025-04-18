@@ -1,85 +1,137 @@
 function backButtonClicked() {
-    window.location.href = "../index.html";
+  window.location.href = "../index.html";
 }
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+const scoreInfo = document.getElementById("scoreInfo");
+const menu = document.getElementById("gameMenu");
+const speedSlider = document.getElementById("speedSlider");
+const speedSliderLabel = document.getElementById("speedSliderLabel");
 
 const gridSize = 20;
-const tileCountX = canvas.width / gridSize;
+const tileCount = canvas.width / gridSize;
 
-let snake = [{ x: 10, y: 10 }];
-let direction = { x: 0, y: 0 };
-let food = { x: 15, y: 15 };
-let score = 0;
+let snake = [];
+let direction;
+let food;
+let score;
 
 function draw() {
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+  snake.unshift(head);
 
-    ctx.fillStyle = "red";
-    ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
-
-    const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
-    snake.unshift(head);
-
-    if (head.x === food.x && head.y === food.y) {
-        food = {
-            x: Math.floor(Math.random() * tileCountX),
-            y: Math.floor(Math.random() * tileCountX),
-        };
-        score++;
-        // TODO: check win condition
-    } else {
-        snake.pop();
+  if (head.x === food.x && head.y === food.y) {
+    food = generateFood();
+    score++;
+    if (score >= gridSize * gridSize) {
+      scoreInfo.innerText = "You win!";
+      scoreInfo.style.color = "green";
+      scoreInfo.style.display = "inline";
+      menu.style.visibility = "visible";
+      clearInterval(interval);
     }
+  } else {
+    snake.pop();
+  }
 
-    ctx.fillStyle = "green";
-    for (let segment of snake) {
-        ctx.fillRect(
-            segment.x * gridSize,
-            segment.y * gridSize,
-            gridSize,
-            gridSize
-        );
-    }
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if (
-        head.x < 0 ||
-        head.x >= tileCountX ||
-        head.y < 0 ||
-        head.y >= tileCountX ||
-        snake.slice(1).some((seg) => seg.x === head.x && seg.y === head.y)
-    ) {
-        // TODO: Show game over message and reload the game (maybe a menu?)
-        alert("Game Over! Your score: " + score);
-        snake = [{ x: 10, y: 10 }];
-        direction = { x: 0, y: 0 };
-        food = { x: 15, y: 15 };
-        score = 0;
-    }
+  ctx.fillStyle = "red";
+  ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+
+  let c = 50;
+  for (let segment of snake) {
+    ctx.fillStyle = `hsl(${c}, 100%, 50%)`;
+    c += 3;
+    ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+  }
+
+  if (
+    head.x < 0 ||
+    head.x >= tileCount ||
+    head.y < 0 ||
+    head.y >= tileCount ||
+    snake.slice(1).some((seg) => seg.x === head.x && seg.y === head.y)
+  ) {
+    scoreInfo.innerText = "Game Over!\nYour score: " + score;
+    scoreInfo.style.color = "red";
+    scoreInfo.style.display = "inline";
+    menu.style.visibility = "visible";
+    clearInterval(interval);
+  }
 }
 
+function generateFood() {
+  let newFood;
+  do {
+    newFood = {
+      x: Math.floor(Math.random() * tileCount),
+      y: Math.floor(Math.random() * tileCount),
+    };
+  } while (snake.some((segment) => segment.x === newFood.x && segment.y === newFood.y));
+  return newFood;
+}
+
+let directionChangeQueue = [];
 function changeDirection(event) {
-    // TODO: queue up to 2 direction changes and only update direction once per interval
-    switch (event.key) {
-        case "ArrowUp":
-            if (direction.y === 0) direction = { x: 0, y: -1 };
-            break;
-        case "ArrowDown":
-            if (direction.y === 0) direction = { x: 0, y: 1 };
-            break;
-        case "ArrowLeft":
-            if (direction.x === 0) direction = { x: -1, y: 0 };
-            break;
-        case "ArrowRight":
-            if (direction.x === 0) direction = { x: 1, y: 0 };
-            break;
+  switch (event.key) {
+    case "ArrowUp":
+      if (
+        (directionChangeQueue.length === 0 && direction.y === 0) ||
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+      )
+        directionChangeQueue.push({ x: 0, y: -1 });
+      break;
+    case "ArrowDown":
+      if (
+        (directionChangeQueue.length === 0 && direction.y === 0) ||
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+      )
+        directionChangeQueue.push({ x: 0, y: 1 });
+      break;
+    case "ArrowLeft":
+      if (
+        (directionChangeQueue.length === 0 && direction.x === 0) ||
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+      )
+        directionChangeQueue.push({ x: -1, y: 0 });
+      break;
+    case "ArrowRight":
+      if (
+        (directionChangeQueue.length === 0 && direction.x === 0) ||
+        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+      )
+        directionChangeQueue.push({ x: 1, y: 0 });
+      break;
+  }
+}
+document.addEventListener("keydown", changeDirection);
+
+let interval;
+let intervalSpeed = 100;
+function startDrawing() {
+  interval = setInterval(() => {
+    if (directionChangeQueue.length > 0) {
+      direction = directionChangeQueue.shift();
     }
+    draw();
+  }, intervalSpeed);
 }
 
-document.addEventListener("keydown", changeDirection);
-setInterval(() => {
-    draw();
-    // TODO: probably check direction here
-}, 100);
+function updateSpeed() {
+  intervalSpeed = parseInt(speedSlider.value) * 50;
+  speedSliderLabel.innerText = "Tickrate: " + intervalSpeed + "ms";
+}
+
+function startGame() {
+  menu.style.visibility = "hidden";
+
+  snake = [{ x: Math.floor(tileCount / 2), y: Math.floor(tileCount / 2) }];
+  direction = { x: 0, y: 0 };
+  food = { x: Math.floor(tileCount / 2) + 4, y: Math.floor(tileCount / 2) };
+  score = 0;
+
+  startDrawing();
+}
