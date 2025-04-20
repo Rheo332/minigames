@@ -1,8 +1,5 @@
 function backButtonClicked() {
-    window.location.href = "../index.html";
-  }
+  window.location.href = "../index.html";
+}
 
-  function startGame() {
-    
-  
-  }
+function startGame() {}

@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="globalStyle.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Minigames</title>
-  </head>
 
-  <body>
-    <h1 class="bigTitle">Space Minigames</h1>
-    <div id="menu">
-      <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
-      <button id="snakeButton" class="gameButton" onclick="startGame('snake')">Snake</button>
-      <button id="reactionsButton" class="gameButton" onclick="startGame('reactions')">Reactions</button>
-      <button id="wordleButton" class="gameButton" onclick="startGame('wordle')">Wordle</button>
-      <button id="..." class="gameButton" onclick="startGame('...')">...</button>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="globalStyle.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="media/img/alien.png" type="image/png" />
+  <title>Minigames</title>
+</head>
 
-    <video autoplay muted loop playsinline class="bgVideo">
-      <source src="media/vid/stars.mp4" type="video/mp4" />
-    </video>
-    <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space"
-      >Outer Space Stock Videos by Vecteezy</a
-    >
-    <a class="credits" href="">Credits</a>
-    <script src="script.js"></script>
-  </body>
+<body>
+  <h1 class="bigTitle">Space Minigames</h1>
+  <div id="menu">
+    <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
+    <button id="snakeButton" class="gameButton" onclick="startGame('snake')">Snake</button>
+    <button id="reactionsButton" class="gameButton" onclick="startGame('reactions')">Reactions</button>
+    <button id="wordleButton" class="gameButton" onclick="startGame('wordle')">Wordle</button>
+    <button id="..." class="gameButton" onclick="startGame('...')">...</button>
+  </div>
+
+  <video autoplay muted loop playsinline class="bgVideo">
+    <source src="media/vid/stars.mp4" type="video/mp4" />
+  </video>
+  <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
+    Vecteezy</a>
+  <a class="credits" href="">Credits</a>
+  <button class="soundButton" onclick="toggleSound()"></button>
+
+  <audio id="bgMusic" loop autoplay>
+    <source src="media/sound/bgmusic.mp3" type="audio/mp3" />
+  </audio>
+  <script src="script.js"></script>
+</body>
+
 </html>
