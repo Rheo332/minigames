@@ -72,7 +72,7 @@
 
 .soundButton {
   position: absolute;
-  left: 1%;
+  right: 1%;
   top: 1%;
   background: url(media/img/soundOff.png) no-repeat center center;
   background-size: contain;

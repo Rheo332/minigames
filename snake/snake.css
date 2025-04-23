@@ -22,24 +22,26 @@ canvas {
 .canvasWrapper {
   position: relative;
   display: inline-block;
+  width: 500px;
+  height: 500px;
 }
 .canvasWrapper::after,
 .canvasWrapper::before {
   content: "";
   background: conic-gradient(
     from var(--angle),
-    transparent 20%,
+    transparent 10%,
     var(--primary-accent-color)
   );
-  animation: spin 2s linear infinite;
+  animation: spin 3s linear infinite;
   height: 100%;
   width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-49.8%, -49.8%);
   z-index: -1;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
 }
 .canvasWrapper::before {

@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../globalStyle.css" />
-    <link rel="stylesheet" href="snake.css" />
-    <title>Snake</title>
-  </head>
 
-  <body>
-    <div class="ribbon">
-      <button id="backButton" onclick="backButtonClicked()">Back</button>
-      <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../globalStyle.css" />
+  <link rel="stylesheet" href="snake.css" />
+  <title>Snake</title>
+</head>
+
+<body>
+  <div class="ribbon">
+    <button id="backButton" onclick="backButtonClicked()">Back</button>
+    <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+  </div>
+
+  <div id="gameContainer">
+    <h1 class="bigTitle">Space Snake</h1>
+    <div id="gameMenu">
+      <button id="startButton" onclick="startGame()">Start Game</button>
+      <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 100ms</span></label>
+      <input type="range" id="speedSlider" min="1" max="3" value="2" step="1" onchange="updateSpeed()" />
+      <span id="scoreInfo"></span>
     </div>
-
-    <div id="gameContainer">
-      <h1 class="bigTitle">Space Snake</h1>
-      <div id="gameMenu">
-        <button id="startButton" onclick="startGame()">Start Game</button>
-        <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 100ms</span></label>
-        <input type="range" id="speedSlider" min="1" max="3" value="2" step="1" onchange="updateSpeed()" />
-        <span id="scoreInfo"></span>
-      </div>
-      <div class="canvasWrapper">
-        <canvas id="gameCanvas" width="500" height="500"></canvas>
-      </div>
+    <div class="canvasWrapper">
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
     </div>
+  </div>
 
-    <video autoplay muted loop playsinline class="bgVideo">
-      <source src="../media/vid/stars.mp4" type="video/mp4" />
-    </video>
-    <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space"
-      >Outer Space Stock Videos by Vecteezy</a
-    >
-    <a class="credits" href="">Credits</a>
-    <script src="snake.js"></script>
-  </body>
+  <video autoplay muted loop playsinline class="bgVideo">
+    <source src="../media/vid/stars.mp4" type="video/mp4" />
+  </video>
+  <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
+    Vecteezy</a>
+  <a class="credits" href="">Credits</a>
+  <script src="snake.js"></script>
+</body>
+
 </html>
