@@ -60,6 +60,7 @@ function draw() {
     scoreInfo.style.display = "inline";
     menu.style.visibility = "visible";
     clearInterval(interval);
+    directionChangeQueue = [];
   }
 }
 
@@ -80,28 +81,32 @@ function changeDirection(event) {
     case "ArrowUp":
       if (
         (directionChangeQueue.length === 0 && direction.y === 0) ||
-        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+        (directionChangeQueue.length > 0 &&
+          directionChangeQueue[directionChangeQueue.length - 1].y === 0)
       )
         directionChangeQueue.push({ x: 0, y: -1 });
       break;
     case "ArrowDown":
       if (
         (directionChangeQueue.length === 0 && direction.y === 0) ||
-        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].y === 0)
+        (directionChangeQueue.length > 0 &&
+          directionChangeQueue[directionChangeQueue.length - 1].y === 0)
       )
         directionChangeQueue.push({ x: 0, y: 1 });
       break;
     case "ArrowLeft":
       if (
         (directionChangeQueue.length === 0 && direction.x === 0) ||
-        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+        (directionChangeQueue.length > 0 &&
+          directionChangeQueue[directionChangeQueue.length - 1].x === 0)
       )
         directionChangeQueue.push({ x: -1, y: 0 });
       break;
     case "ArrowRight":
       if (
         (directionChangeQueue.length === 0 && direction.x === 0) ||
-        (directionChangeQueue.length > 0 && directionChangeQueue[directionChangeQueue.length - 1].x === 0)
+        (directionChangeQueue.length > 0 &&
+          directionChangeQueue[directionChangeQueue.length - 1].x === 0)
       )
         directionChangeQueue.push({ x: 1, y: 0 });
       break;
