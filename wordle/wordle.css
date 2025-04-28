@@ -5,11 +5,11 @@ body {
   background-color: var(--primary-bg-color);
 }
 
-#game {
+#gameContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: #ffffff;
   margin-top: 40px;
   position: relative;
 }
@@ -28,4 +28,51 @@ body {
 }
 #gameMenu button:hover {
   opacity: 1;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.word input {
+  width: 60px;
+  height: 60px;
+  font-size: 36px;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-accent-color);
+  background-color: transparent;
+  font-weight: bold;
+  scale: 1;
+  transition: scale 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+  background: linear-gradient(to bottom, var(--primary-accent-color) 35%, #5d65fa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.word input:focus {
+  outline: none;
+  border-color: var(--primary-accent-color);
+  scale: 1.2;
+  transition: scale 0.2s ease-in-out;
+  border: 2px solid slategray;
+  transition: border 0.4s ease-in-out;
+  /*animation: spin 0.6s ease normal;*/
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    scale: 0.8;
+  }
+  50% {
+    scale: 1.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1.2;
+  }
 }
