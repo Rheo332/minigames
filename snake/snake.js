@@ -8,9 +8,22 @@ const scoreInfo = document.getElementById("scoreInfo");
 const menu = document.getElementById("gameMenu");
 const speedSlider = document.getElementById("speedSlider");
 const speedSliderLabel = document.getElementById("speedSliderLabel");
+const foodImage = new Image();
 
 const gridSize = 20;
 const tileCount = canvas.width / gridSize;
+
+const planetImages = [
+  "mercury.png",
+  "venus.png",
+  "earth.png",
+  "mars.png",
+  "jupiter.png",
+  "saturn.png",
+  "uranus.png",
+  "neptune.png",
+];
+let currentPlanet = planetImages[Math.floor(Math.random() * planetImages.length)];
 
 let snake = [];
 let direction;
@@ -23,6 +36,8 @@ function draw() {
 
   if (head.x === food.x && head.y === food.y) {
     food = generateFood();
+    currentPlanet = planetImages[Math.floor(Math.random() * planetImages.length)];
+
     score++;
     if (score >= gridSize * gridSize) {
       scoreInfo.innerText = "You win!";
@@ -38,8 +53,8 @@ function draw() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "red";
-  ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+  foodImage.src = "../media/img/" + currentPlanet;
+  ctx.drawImage(foodImage, food.x * gridSize, food.y * gridSize, gridSize, gridSize);
 
   let c = 50;
   for (let segment of snake) {
