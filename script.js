@@ -4,20 +4,16 @@ function startGame(game) {
 
 const audio = document.getElementById("bgMusic");
 audio.volume = 0.1;
-audio.loop = true;
 audio.pause();
-let soundOn = false;
 
 function toggleSound() {
   const soundButton = document.getElementsByClassName("soundButton")[0];
 
-  if (soundOn) {
+  if (!audio.paused) {
     audio.pause();
     soundButton.classList.toggle("active");
-    soundOn = false;
   } else {
     audio.play();
     soundButton.classList.toggle("active");
-    soundOn = true;
   }
 }
