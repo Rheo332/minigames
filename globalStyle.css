@@ -45,7 +45,6 @@
   left: 1%;
   font-size: 12px;
   color: #ffffff;
-  opacity: 0.7;
 }
 
 a {
@@ -54,14 +53,15 @@ a {
 }
 
 .ribbon {
-  position: absolute;
+  display: flex;
+  flex-direction: row;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--menu-bg-color);
 }
 
-.ribbon button {
+#settingsButton,
+#backButton {
   margin: 10px;
   padding: 5px 10px;
   border-radius: 3px;
@@ -71,7 +71,8 @@ a {
   font-size: 18px;
 }
 
-.ribbon button:hover {
+#settingsButton:hover,
+#backButton:hover {
   background-color: var(--button-hover-bg-color);
 }
 
@@ -79,13 +80,22 @@ a {
   position: absolute;
   right: 1%;
   top: 1%;
+  border: 0;
   background: url(media/img/soundOff.png) no-repeat center center;
   background-size: contain;
+  background-color: transparent;
   width: 50px;
   height: 50px;
 }
-
 .soundButton.active {
   background: url(media/img/soundOn.png) no-repeat center center;
   background-size: contain;
+}
+
+button {
+  cursor: pointer;
+  opacity: 0.8;
+}
+button:hover {
+  opacity: 1;
 }

@@ -28,11 +28,7 @@ canvas {
 .canvasWrapper::after,
 .canvasWrapper::before {
   content: "";
-  background: conic-gradient(
-    from var(--angle),
-    transparent 10%,
-    var(--primary-accent-color)
-  );
+  background: conic-gradient(from var(--angle), transparent 10%, var(--primary-accent-color));
   animation: spin 3s linear infinite;
   height: 100%;
   width: 100%;
@@ -84,12 +80,7 @@ canvas {
   margin: 10px;
   border-radius: 5px;
   font-size: 20px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
-  opacity: 0.8;
-}
-#gameMenu button:hover {
-  opacity: 1;
 }
 
 #scoreInfo {

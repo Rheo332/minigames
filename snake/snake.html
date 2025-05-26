@@ -13,6 +13,7 @@
   <div class="ribbon">
     <button id="backButton" onclick="backButtonClicked()">Back</button>
     <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+    <button class="soundButton" onclick="toggleSound()"></button>
   </div>
 
   <div id="gameContainer">
@@ -28,6 +29,9 @@
     </div>
   </div>
 
+  <audio id="bgMusic" loop autoplay>
+    <source src="../media/sound/bgmusic.mp3" type="audio/mp3" />
+  </audio>
   <video autoplay muted loop playsinline class="bgVideo">
     <source src="../media/vid/stars.mp4" type="video/mp4" />
   </video>
@@ -40,6 +44,7 @@
   </span>
   <a class="credits" href="">Credits</a>
   <script src="snake.js"></script>
+  <script src="../globalScript.js"></script>
 </body>
 
 </html>
