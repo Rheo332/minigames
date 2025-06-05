@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../globalStyle.css" />
-  <link rel="stylesheet" href="reactions.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../globalStyle.css">
+  <link rel="stylesheet" href="reactions.css">
   <title>Reactions</title>
 </head>
 
@@ -13,7 +13,6 @@
   <div class="ribbon">
     <button id="backButton" onclick="backButtonClicked()">Back</button>
     <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
-    <button class="soundButton" onclick="toggleSound()"></button>
   </div>
 
   <div id="gameContainer">
@@ -33,15 +32,14 @@
     <h1 id="score" class="bigTitle">0</h1>
   </div>
 
+  <button class="soundButton" onclick="toggleSound()"></button>
   <audio id="bgMusic" loop>
-    <source src="../media/sound/bgmusic.mp3" type="audio/mp3" />
+    <source src="../media/sound/bgmusic.mp3" type="audio/mp3">
   </audio>
   <video autoplay muted loop playsinline class="bgVideo">
-    <source src="../media/vid/stars.mp4" type="video/mp4" />
+    <source src="../media/vid/stars.mp4" type="video/mp4">
   </video>
-  <a class="bgAttribution" href="https://www.vecteezy.com/free-videos/outer-space">Outer Space Stock Videos by
-    Vecteezy</a>
-  <a class="credits" href="">Credits</a>
+  <a class="credits" href="/credits.html">Credits</a>
   <script src="reactions.js"></script>
   <script src="../globalScript.js"></script>
 </body>

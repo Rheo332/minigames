@@ -1,7 +1,3 @@
-function backButtonClicked() {
-  window.location.href = "../index.html";
-}
-
 const words = document.getElementsByClassName("word");
 
 Array.from(words[0].children).forEach((child) => {

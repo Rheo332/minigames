@@ -10,6 +10,13 @@
   --menu-bg-color: rgba(58, 82, 106, 0.7);
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg-color);
+  font-family: var(--primary-font-family);
+}
+
 .bigTitle {
   margin-top: 3%;
   font-size: 46px;

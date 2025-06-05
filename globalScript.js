@@ -1,5 +1,5 @@
 const audio = document.getElementById("bgMusic");
-audio.volume = 0.1;
+audio.volume = 0.05;
 audio.pause();
 
 function toggleSound() {
@@ -12,4 +12,12 @@ function toggleSound() {
     audio.play();
     soundButton.classList.toggle("active");
   }
+}
+
+function backButtonClicked() {
+  window.location.href = "../index.html";
+}
+
+function creditsButtonClicked() {
+  window.location.href = "../credits.html";
 }

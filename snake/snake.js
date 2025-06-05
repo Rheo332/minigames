@@ -1,7 +1,3 @@
-function backButtonClicked() {
-  window.location.href = "../index.html";
-}
-
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const scoreInfo = document.getElementById("scoreInfo");
