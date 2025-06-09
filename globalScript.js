@@ -19,5 +19,5 @@ function backButtonClicked() {
 }
 
 function creditsButtonClicked() {
-  window.location.href = "../credits.html";
+  window.location.href = "credits/credits.html";
 }
