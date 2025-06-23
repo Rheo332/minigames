@@ -15,7 +15,16 @@
   </div>
 
   <div id="gameContainer">
-    <h1 class="bigTitle">Space Snake</h1>
+    <div class="title-wrapper">
+      <button class="info-button" onclick="togglePopup()"></button>
+      <div class="info-popup" id="infoPopup">
+        Welcome to Space Snake!
+        <br>
+        <br>
+        How to play:
+      </div>
+      <h1 class="bigTitle snake-title">Space Snake</h1>
+    </div>
     <div id="gameMenu">
       <button id="startButton" onclick="startGame()">Start Game</button>
       <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 100ms</span></label>

@@ -110,3 +110,7 @@ canvas {
   color: var(--primary-accent-color);
   margin-bottom: 5px;
 }
+
+.snake-title {
+  margin-bottom: 15px;
+}

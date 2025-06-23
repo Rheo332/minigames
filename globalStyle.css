@@ -106,3 +106,41 @@ button {
 button:hover {
   opacity: 1;
 }
+
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transform: translate(calc(-0.5rem - 20px), 0);
+  position: relative;
+}
+
+.info-button {
+  background-color: white;
+  background-image: url(media/img/information.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.info-popup {
+  display: none;
+  position: absolute;
+  background: var(--menu-bg-color);
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-200px - 110%), 25px);
+  z-index: 1000;
+}

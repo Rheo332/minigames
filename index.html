@@ -14,7 +14,21 @@
   <div class="ribbon">
     <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
   </div>
-  <h1 class="bigTitle">Space Minigames</h1>
+  <div class="title-wrapper">
+    <button class="info-button" onclick="togglePopup()"></button>
+    <div class="info-popup" id="infoPopup">
+      Welcome to the Space Minigames Home!
+      <br>
+      <br>
+      A small collection of simple, browser-based games.<br>
+      No sign-ups or installs! Just quick, casual fun whenever
+      you have a few minutes to spare.
+      <br>
+      <br>
+      Made by Ninab Youkhanna and Benjamin Sala
+    </div>
+    <h1 class="bigTitle home-title">Space Minigames</h1>
+  </div>
   <div id="menu">
     <button id="snakeButton" class="gameButton" onclick="startGame('snake')">Snake</button>
     <button id="reactionsButton" class="gameButton" onclick="startGame('reactions')">Reactions</button>

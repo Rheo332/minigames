@@ -21,3 +21,16 @@ function backButtonClicked() {
 function creditsButtonClicked() {
   window.location.href = "credits/credits.html";
 }
+
+function togglePopup() {
+  const popup = document.getElementById("infoPopup");
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function (event) {
+  const popup = document.getElementById("infoPopup");
+  const button = document.querySelector(".info-button");
+  if (!popup.contains(event.target) && !button.contains(event.target)) {
+    popup.style.display = "none";
+  }
+});
