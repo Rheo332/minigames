@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../globalStyle.css" />
+  <link rel="stylesheet" href="tetris.css" />
+  <title>Tetris</title>
+</head>
+<body>
+  <div class="ribbon">
+    <button id="backButton" onclick="backButtonClicked()">Back</button>
+    <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+  </div>
+
+<div id="gameContainer">
+  <h1 class="bigTitle">Space Tetris</h1>
+  
+  <div id="gameMenu">
+    <button id="startButton" onclick="startGame()">Start Game</button>
+    <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 600ms</span></label>
+    <input type="range" id="speedSlider" min="1" max="3" value="2" step="1" onchange="updateSpeed()" />
+    <span id="scoreInfo"></span>
+  </div>
+
+  <div class="canvasWrapper" style="position: relative;">
+    <canvas id="gameCanvas" width="240" height="400"></canvas>
+  </div>
+</div>
+
+  <button class="soundButton" onclick="toggleSound()"></button>
+  <audio id="bgMusic" loop>
+    <source src="../media/sound/bgmusic.mp3" type="audio/mp3" />
+  </audio>
+  <video autoplay muted loop playsinline class="bgVideo">
+    <source src="../media/vid/stars.mp4" type="video/mp4" />
+  </video>
+  <a class="credits" href="/credits.html">Credits</a>
+
+  <script src="tetris.js"></script>
+  <script src="../globalScript.js"></script>
+</body>
+</html>
