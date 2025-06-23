@@ -27,3 +27,7 @@ button {
   font-size: 26px;
   transition: background-color 0.3s ease;
 }
+
+.home-title {
+  margin-bottom: 40px;
+}

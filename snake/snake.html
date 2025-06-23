@@ -11,12 +11,20 @@
 
 <body>
   <div class="ribbon">
-    <button id="backButton" onclick="backButtonClicked()">Back</button>
-    <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+    <button id="backButton" onclick="backButtonClicked()">Home</button>
   </div>
 
   <div id="gameContainer">
-    <h1 class="bigTitle">Space Snake</h1>
+    <div class="title-wrapper">
+      <button class="info-button" onclick="togglePopup()"></button>
+      <div class="info-popup" id="infoPopup">
+        Welcome to Space Snake!
+        <br>
+        <br>
+        How to play:
+      </div>
+      <h1 class="bigTitle snake-title">Space Snake</h1>
+    </div>
     <div id="gameMenu">
       <button id="startButton" onclick="startGame()">Start Game</button>
       <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 100ms</span></label>
@@ -35,7 +43,7 @@
   <video autoplay muted loop playsinline class="bgVideo">
     <source src="../media/vid/stars.mp4" type="video/mp4">
   </video>
-  <a class="credits" href="/credits.html">Credits</a>
+  <a class="credits" href="../credits/credits.html">Credits</a>
   <script src="snake.js"></script>
   <script src="../globalScript.js"></script>
 </body>

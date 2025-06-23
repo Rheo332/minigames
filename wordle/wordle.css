@@ -63,3 +63,7 @@
     transform: scale(1);
   }
 }
+
+.wordle-title {
+  margin-bottom: 15px;
+}
