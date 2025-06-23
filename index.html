@@ -11,16 +11,19 @@
 </head>
 
 <body>
+  <div class="ribbon">
+    <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+  </div>
   <h1 class="bigTitle">Space Minigames</h1>
   <div id="menu">
-    <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
     <button id="snakeButton" class="gameButton" onclick="startGame('snake')">Snake</button>
     <button id="reactionsButton" class="gameButton" onclick="startGame('reactions')">Reactions</button>
     <button id="wordleButton" class="gameButton" onclick="startGame('wordle')">Wordle</button>
+    <button id="minesweeperButton" class="gameButton" onclick="startGame('minesweeper')">Minesweeper</button>
     <button id="..." class="gameButton" onclick="startGame('...')">...</button>
   </div>
 
-  <button class="credits" onclick="creditsButtonClicked()">Credits</button>
+  <a class="credits" href="credits/credits.html">Credits</a>
   <video autoplay muted loop playsinline class="bgVideo">
     <source src="media/vid/stars.mp4" type="video/mp4">
   </video>
