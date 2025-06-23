@@ -1,0 +1,96 @@
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+canvas {
+  background: #000000;
+  border: 1px solid #ffffff;
+  opacity: 0.8;
+}
+
+#canvasWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+
+  /*  center the canvas by translating the canvas wrapper 
+        1/2 - canvas-width / (2 * (padding + gap + canvas-width + output-width)) */
+  transform: translateX(14.7%);
+}
+
+#output {
+  margin: 0;
+  padding: 5px;
+  background-color: #000000;
+  opacity: 0.8;
+  font-size: 20px;
+  font-family: monospace;
+  height: 540px;
+  width: 200px;
+  border: 1px solid #ffffff;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#gameMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: var(--menu-bg-color);
+  padding: 10px;
+  border-radius: 10px;
+}
+#gameMenu button {
+  background: var(--primary-accent-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#scoreInfo {
+  display: none;
+  max-width: 200px;
+  word-wrap: break-word;
+  margin: 5px;
+  border: 2px solid var(--primary-accent-color);
+  color: var(--primary-accent-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 18px;
+}
+
+#titleWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  transform: translateX(14.7%);
+}
+#reactionsTitle {
+  padding: 1px;
+  text-align: center;
+  width: 550px;
+  margin-bottom: 0;
+}
+#timer {
+  padding: 6px;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 0;
+}

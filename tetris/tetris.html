@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">       
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <title>JavaScript Tetris</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../globalStyle.css">
+        <script src="tetris.js"></script>
+    </head>
+    <body>
+
+
+    <div class="ribbon">
+        <button id="backButton" onclick="backButtonClicked()">Back</button>
+        <button id="settingsButton" onclick="settingsButtonClicked()">Settings</button>
+    </div>
+
+    <div id="gameContainer">
+    <h1 class="bigTitle">Space Tetris</h1>
+
+    <div class="canvasWrapper">
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
+    </div>
+  </div>
+    <button class="soundButton" onclick="toggleSound()"></button>
+  <audio id="bgMusic" loop>
+    <source src="../media/sound/bgmusic.mp3" type="audio/mp3">
+  </audio>
+  <video autoplay muted loop playsinline class="bgVideo">
+    <source src="../media/vid/stars.mp4" type="video/mp4">
+  </video>
+  <a class="credits" href="/credits.html">Credits</a>
+  <script src="../globalScript.js"></script>
+
+    </body>
+</html>
