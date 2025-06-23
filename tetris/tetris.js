@@ -114,10 +114,7 @@ function collide(arena, player) {
   const [m, o] = [player.shape, player.pos];
   for (let y = 0; y < m.length; ++y) {
     for (let x = 0; x < m[y].length; ++x) {
-      if (
-        m[y][x] !== 0 &&
-        (arena[y + o.y] && arena[y + o.y][x + o.x]) !== 0
-      ) {
+      if (m[y][x] !== 0 && (arena[y + o.y] && arena[y + o.y][x + o.x]) !== 0) {
         return true;
       }
     }
@@ -132,7 +129,6 @@ function playerDrop() {
     merge(arena, player);
     playerReset();
     arenaSweep();
-    updateScore();
   }
   dropCounter = 0;
 }
@@ -178,15 +174,13 @@ function playerReset() {
   const pieces = "TJLOSZI";
   player.shape = createPiece(pieces[Math.floor(Math.random() * pieces.length)]);
   player.pos.y = 0;
-  player.pos.x =
-    ((arena[0].length / 2) | 0) - ((player.shape[0].length / 2) | 0);
+  player.pos.x = ((arena[0].length / 2) | 0) - ((player.shape[0].length / 2) | 0);
   if (collide(arena, player)) {
-    arena.forEach(row => row.fill(0));
-    player.score = 0;
-    updateScore();
-    alert("Game Over!");
+    arena.forEach((row) => row.fill(0));
     gameRunning = false;
     document.getElementById("gameMenu").style.visibility = "visible";
+    document.getElementById("scoreInfo").style.display = "inline";
+    document.getElementById("scoreInfo").innerText = `Your score: ${player.score}`;
   }
 }
 
@@ -202,12 +196,6 @@ function arenaSweep() {
     player.score += rowCount * 10;
     rowCount *= 2;
   }
-  updateScore();
-}
-
-function updateScore() {
-  player.score ++;
-  document.getElementById("scoreInfo").innerHTML = `Score: ${player.score}`;
 }
 
 function updateSpeed() {
@@ -235,15 +223,15 @@ function update(time = 0) {
 function startGame() {
   document.getElementById("gameMenu").style.visibility = "hidden";
   gameRunning = true;
-  arena.forEach(row => row.fill(0));
+  arena.forEach((row) => row.fill(0));
   playerReset();
-  updateScore();
   lastTime = 0;
   dropCounter = 0;
+  player.score = 0;
   update();
 }
 
-document.addEventListener("keydown", e => {
+document.addEventListener("keydown", (e) => {
   if (!gameRunning) return;
   if (e.key === "ArrowLeft" || e.key === "a") playerMove(-1);
   else if (e.key === "ArrowRight" || e.key === "d") playerMove(1);
