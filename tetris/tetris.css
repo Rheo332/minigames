@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   color: #fff;
-  
+
   margin: 0 auto;
   position: relative;
   width: 300px; /* damit alles kompakt bleibt */
@@ -26,7 +26,6 @@ canvas {
   padding: 20px;
 }
 
-
 #scoreInfo {
   display: none;
   max-width: 200px;
@@ -39,8 +38,6 @@ canvas {
   text-align: left;
   font-size: 18px;
 }
-
-
 
 #gameMenu {
   display: flex;
@@ -71,7 +68,6 @@ canvas {
 }
 
 #scoreInfo {
- 
   max-width: 120px;
   word-wrap: break-word;
   margin: 5px;
@@ -104,4 +100,8 @@ canvas {
   font-size: 20px;
   color: var(--primary-accent-color);
   margin-bottom: 5px;
+}
+
+.tetris-title {
+  margin-bottom: 15px;
 }

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../globalStyle.css" />
   <link rel="stylesheet" href="tetris.css" />
+  <link rel="icon" href="../media/img/alien.png" type="image/png">
   <title>Tetris</title>
 </head>
+
 <body>
   <div class="ribbon">
     <button id="backButton" onclick="backButtonClicked()">Back</button>
   </div>
 
-<div id="gameContainer">
- <div class="title-wrapper">
+  <div id="gameContainer">
+    <div class="title-wrapper">
       <button class="info-button" onclick="togglePopup()"></button>
       <div class="info-popup" id="infoPopup">
         Welcome to Space Wordle!
@@ -22,22 +25,22 @@
         How to play:
         <br>
         <br>
-        In Tetris, the goal is to arrange falling blocks (tetrominoes) into complete horizontal lines. 
-        When a line is completed, it disappears, and you score points. As you clear more lines, the game speeds up. 
-        Use the arrow keys to move and rotate the blocks, trying to fit them together without gaps. 
+        In Tetris, the goal is to arrange falling blocks (tetrominoes) into complete horizontal lines.
+        When a line is completed, it disappears, and you score points. As you clear more lines, the game speeds up.
+        Use the arrow keys to move and rotate the blocks, trying to fit them together without gaps.
         If the blocks stack up to the top of the screen, the game is over.
         <br>
         W or Arrow Up = rotate, A or Arrow left = left, D or Arrow Right = right, S or Arrow Down = down
       </div>
-      <h1 class="bigTitle wordle-title">Space Tetris</h1>
+      <h1 class="bigTitle tetris-title">Space Tetris</h1>
     </div>
-  
-  <div id="gameMenu">
-    <button id="startButton" onclick="startGame()">Start Game</button>
-    <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 600ms</span></label>
-    <input type="range" id="speedSlider" min="1" max="3" value="2" step="1" onchange="updateSpeed()" />
-    <span id="scoreInfo"></span>
-  </div>
+
+    <div id="gameMenu">
+      <button id="startButton" onclick="startGame()">Start Game</button>
+      <label for="speedSlider"><span id="speedSliderLabel">Tickrate: 600ms</span></label>
+      <input type="range" id="speedSlider" min="1" max="3" value="2" step="1" onchange="updateSpeed()" />
+      <span id="scoreInfo"></span>
+    </div>
 
   <div class="canvasWrapper" style="position: relative;">
     <canvas id="gameCanvas" width="240" height="400"></canvas>
@@ -58,4 +61,5 @@
   <script src="tetris.js"></script>
   <script src="../globalScript.js"></script>
 </body>
+
 </html>
