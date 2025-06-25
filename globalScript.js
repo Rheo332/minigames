@@ -3,14 +3,14 @@ audio.volume = 0.05;
 audio.pause();
 
 function toggleSound() {
-  const soundButton = document.getElementsByClassName("soundButton")[0];
+  const soundIconUse = document.getElementById("sound-icon-use");
 
   if (!audio.paused) {
     audio.pause();
-    soundButton.classList.toggle("active");
+    soundIconUse.setAttribute("href", "#sound-off-icon");
   } else {
     audio.play();
-    soundButton.classList.toggle("active");
+    soundIconUse.setAttribute("href", "#sound-on-icon");
   }
 }
 
@@ -33,4 +33,15 @@ document.addEventListener("click", function (event) {
   if (!popup.contains(event.target) && !button.contains(event.target)) {
     popup.style.display = "none";
   }
+});
+
+const select = document.getElementById("theme-select");
+const savedTheme = localStorage.getItem("theme") || "gold";
+document.documentElement.setAttribute("data-theme", savedTheme);
+select.value = savedTheme;
+
+select.addEventListener("change", (e) => {
+  const theme = e.target.value;
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 });

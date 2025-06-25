@@ -99,10 +99,6 @@
   }
 }
 
-.wordle-title {
-  margin-bottom: 15px;
-}
-
 #infoPopup {
   left: 50%;
   top: 50%;
@@ -121,5 +117,5 @@
   text-align: center;
   font-size: 21px;
   font-weight: bold;
-  background-color: var(--primary-accent-color);
+  background-color: black;
 }

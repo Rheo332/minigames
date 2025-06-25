@@ -10,6 +10,37 @@
   --menu-bg-color: rgba(58, 82, 106, 0.7);
 }
 
+[data-theme="gold"] {
+  --primary-bg-color: #404040;
+
+  --primary-accent-color: #f0c674;
+
+  --button-text-color: #3a526a;
+  --button-hover-bg-color: #d4a93c;
+
+  --menu-bg-color: rgba(58, 82, 106, 0.7);
+}
+[data-theme="silver"] {
+  --primary-bg-color: #404040;
+
+  --primary-accent-color: #c0c0c0;
+
+  --button-text-color: #3a526a;
+  --button-hover-bg-color: #a0a0a0;
+
+  --menu-bg-color: rgba(58, 82, 106, 0.7);
+}
+[data-theme="crimson"] {
+  --primary-bg-color: #404040;
+
+  --primary-accent-color: #dc143c;
+
+  --button-text-color: #3a526a;
+  --button-hover-bg-color: #b22222;
+
+  --menu-bg-color: rgba(58, 82, 106, 0.7);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -18,7 +49,6 @@ body {
 }
 
 .bigTitle {
-  margin-top: 3%;
   font-size: 46px;
   background: linear-gradient(to bottom, #ffffff, var(--primary-accent-color));
   background-clip: text;
@@ -86,18 +116,27 @@ a {
 
 .soundButton {
   position: absolute;
+  fill: var(--primary-accent-color);
+  color: var(--primary-accent-color);
   right: 1%;
   top: 1%;
   border: 0;
-  background: url(media/img/soundOff.png) no-repeat center center;
   background-size: contain;
   background-color: transparent;
   width: 50px;
   height: 50px;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 .soundButton.active {
-  background: url(media/img/soundOn.png) no-repeat center center;
   background-size: contain;
+}
+
+.sound-icon {
+  fill: var(--primary-accent-color);
+  width: 100%;
+  height: 100%;
 }
 
 button {

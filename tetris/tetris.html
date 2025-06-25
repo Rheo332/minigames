@@ -32,7 +32,7 @@
         <br>
         W or Arrow Up = rotate, A or Arrow left = left, D or Arrow Right = right, S or Arrow Down = down
       </div>
-      <h1 class="bigTitle tetris-title">Space Tetris</h1>
+      <h1 class="bigTitle">Space Tetris</h1>
     </div>
 
     <div id="gameMenu">
@@ -42,14 +42,13 @@
       <span id="scoreInfo"></span>
     </div>
 
-  <div class="canvasWrapper" style="position: relative;">
-    <canvas id="gameCanvas" width="240" height="400"></canvas>
+    <div class="canvasWrapper" style="position: relative;">
+      <canvas id="gameCanvas" width="240" height="400"></canvas>
+    </div>
+
+    <h1 id="score" class="bigTitle">0</h1>
   </div>
 
-  <h1 id="score" class="bigTitle">0</h1>
-</div>
-
-  <button class="soundButton" onclick="toggleSound()"></button>
   <audio id="bgMusic" loop>
     <source src="../media/sound/bgmusic.mp3" type="audio/mp3" />
   </audio>
@@ -58,6 +57,25 @@
   </video>
   <a class="credits" href="/credits.html">Credits</a>
 
+  <button class="soundButton" onclick="toggleSound()">
+    <svg class="sound-icon" viewBox="0 0 75 75">
+      <use id="sound-icon-use" href="#sound-off-icon"></use>
+    </svg>
+  </button>
+  <svg style="display: none;">
+    <symbol id="sound-off-icon" viewBox="0 0 75 75" stroke="currentColor" stroke-width="5" fill="currentColor">
+      <path d="m39,14-17,15H6V48H22l17,15z" stroke-linejoin="round" />
+      <path d="m49,26 20,24m0-24-20,24" fill="none" stroke-linecap="round" />
+    </symbol>
+
+    <symbol id="sound-on-icon" viewBox="0 0 75 75" stroke="currentColor" stroke-width="5" fill="currentColor">
+      <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z"
+        stroke-linejoin="round" />
+      <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4
+         M55.1,20.5a30,30 0 0 1 0,35.6
+         M61.6,14a38.8,38.8 0 0 1 0,48.6" fill="none" stroke-linecap="round" />
+    </symbol>
+  </svg>
   <script src="tetris.js"></script>
   <script src="../globalScript.js"></script>
 </body>
