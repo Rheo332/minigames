@@ -1,6 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const context = canvas.getContext("2d");
 context.scale(20, 20);
+const score = document.getElementById("score");
 
 const arena = createMatrix(12, 20);
 
@@ -195,6 +196,7 @@ function arenaSweep() {
     y++;
     player.score += rowCount * 10;
     rowCount *= 2;
+    score.innerText = `${player.score}`;
   }
 }
 
