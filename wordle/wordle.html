@@ -20,17 +20,27 @@
       <button class="info-button" onclick="togglePopup()"></button>
       <div class="info-popup" id="infoPopup">
         Welcome to Space Wordle!
-        <br>
-        <br>
+        <br><br>
         How to play:
+        <br><br>
+        In Wordle, your goal is to guess a five-letter word in six attempts.
+        After each guess, the letters will change colors to give you clues.
+        <br><br>
+        Green means the letter is correct and in the right position,
+        yellow means the letter is in the word but in the wrong position,
+        and gray means the letter isn't in the word at all.
+        Use these clues to adjust your next guess and try to figure out the word.
+        <br><br>
+        Only letters A-Z are allowed. Use Enter to submit your guess.
       </div>
       <h1 class="bigTitle wordle-title">Space Wordle</h1>
     </div>
-    <!-- 
-      <div id="gameMenu">
-        <button id="startButton" onclick="startGame()">Start Game</button>
-      </div>
-      -->
+
+    <div id="gameMenu">
+      <button id="startButton" onclick="startGame()">Play Again</button>
+      <span id="scoreInfo"></span>
+    </div>
+
 
     <div class="word" id="word1">
       <input type="text" disabled />

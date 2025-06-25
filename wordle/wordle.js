@@ -1,3 +1,5 @@
+const menu = document.getElementById("gameMenu");
+const scoreInfo = document.getElementById("scoreInfo");
 const words = document.getElementsByClassName("word");
 
 Array.from(words[0].children).forEach((child) => {
@@ -5,8 +7,39 @@ Array.from(words[0].children).forEach((child) => {
 });
 let activeRow = 0;
 
-let wordlist = ["APPLE", "GRAPE", "LEMON", "MANGO", "PEACH"];
-let solution = "APPLE";
+let validWords = [];
+async function loadWords() {
+  try {
+    const response = await fetch("valid-words.txt");
+    const text = await response.text();
+    validWords = text
+      .split("\n")
+      .map((word) => word.trim().toUpperCase())
+      .filter(Boolean);
+  } catch (error) {
+    console.error("Error fetching valid words:", error);
+  }
+}
+loadWords();
+
+let validSolutions = [];
+let solution = "";
+async function loadSolutions() {
+  try {
+    const response = await fetch("valid-solutions.txt");
+    const text = await response.text();
+    validSolutions = text
+      .split("\n")
+      .map((word) => word.trim().toUpperCase())
+      .filter(Boolean);
+
+    solution = validSolutions[Math.floor(Math.random() * validSolutions.length)];
+    console.log("Solution selected:", solution);
+  } catch (error) {
+    console.error("Error fetching valid solutions:", error);
+  }
+}
+loadSolutions();
 
 let row = 1;
 Array.from(words).forEach((element) => {
@@ -40,15 +73,25 @@ Array.from(words).forEach((element) => {
         for (let i = 1; i <= 5; i++) {
           word += document.getElementById(child.id.slice(0, 7) + `${i}`).value;
         }
-        if (wordlist.includes(word)) {
+        if (validWords.includes(word)) {
           if (word === solution) {
-            console.log("Correct word!");
-            // TODO: implement win
+            menu.style.visibility = "visible";
+            Array.from(words[activeRow].children).forEach((c) => {
+              c.disabled = true;
+            });
+            scoreInfo.innerText = "You won! The correct word was: " + solution;
+            scoreInfo.style.color = "green";
+            scoreInfo.style.display = "inline";
           } else {
             for (let i = 1; i <= 5; i++) {
-              // TODO: check every letter and color it accordingly
-              // idea: color only the border
-              // word[i - 1] === solution[i - 1]
+              if (word[i - 1] === solution[i - 1]) {
+                document.getElementById(child.id.slice(0, -1) + `${i}`).style.borderColor = "green";
+              } else if (solution.includes(word[i - 1])) {
+                document.getElementById(child.id.slice(0, -1) + `${i}`).style.borderColor =
+                  "yellow";
+              } else {
+                document.getElementById(child.id.slice(0, -1) + `${i}`).style.borderColor = "gray";
+              }
             }
             Array.from(words[activeRow].children).forEach((c) => {
               c.disabled = true;
@@ -61,12 +104,17 @@ Array.from(words).forEach((element) => {
               document.getElementById(child.id.slice(0, -2) + `${nextRow + 1}` + "1").focus();
               activeRow++;
             } else {
-              console.log("Game Over");
+              menu.style.visibility = "visible";
+              scoreInfo.innerText = "You lost! The correct word was: " + solution;
+              scoreInfo.style.color = "red";
+              scoreInfo.style.display = "inline";
             }
           }
         } else {
-          console.log("Invalid word!");
-          // TODO: wrong word animation
+          for (let i = 1; i <= 5; i++) {
+            word += document.getElementById(child.id.slice(0, 7) + `${i}`).style.animation =
+              "wrongWord 0.4s ease-in-out";
+          }
         }
       }
     });
@@ -76,3 +124,21 @@ Array.from(words).forEach((element) => {
   });
   row++;
 });
+
+function startGame() {
+  Array.from(words).forEach((element) => {
+    Array.from(element.children).forEach((child) => {
+      child.value = "";
+      child.disabled = true;
+      child.style.borderColor = "var(--primary-accent-color)";
+    });
+  });
+  solution = validSolutions[Math.floor(Math.random() * validSolutions.length)];
+  console.log("Solution selected:", solution);
+  Array.from(words[0].children).forEach((child) => {
+    child.disabled = false;
+  });
+  activeRow = 0;
+  document.getElementById("letter11").focus();
+  menu.style.visibility = "hidden";
+}

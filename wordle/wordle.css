@@ -7,6 +7,21 @@
   position: relative;
 }
 
+#gameMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: var(--menu-bg-color);
+  padding: 10px;
+  border-radius: 10px;
+  visibility: hidden;
+}
 #gameMenu button {
   background: var(--primary-accent-color);
   color: var(--button-text-color);
@@ -63,7 +78,48 @@
     transform: scale(1);
   }
 }
+@keyframes wrongWord {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 .wordle-title {
   margin-bottom: 15px;
+}
+
+#infoPopup {
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-160px - 110%), 25px);
+  z-index: 1000;
+}
+
+#scoreInfo {
+  display: none;
+  max-width: 120px;
+  word-wrap: break-word;
+  margin: 5px;
+  border: 2px solid var(--primary-accent-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  background-color: var(--primary-accent-color);
 }
