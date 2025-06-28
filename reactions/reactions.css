@@ -17,7 +17,7 @@ canvas {
   flex-direction: row;
   align-items: flex-start;
   gap: 20px;
-  z-index: -1;
+  
 
   /*  center the canvas by translating the canvas wrapper 
         1/2 - canvas-width / (2 * (padding + gap + canvas-width + output-width)) */
